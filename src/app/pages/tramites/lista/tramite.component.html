@@ -1,0 +1,37 @@
+<mat-card class="border-primary" >
+  <mat-card-header >
+    <h3>Lista de Tramites</h3>
+  </mat-card-header>
+  <mat-card-footer>
+    <div class="table-responsive">
+      <hr>
+      <table class="table mat-table-striped w-100 rounded">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tramite of tramites; let indice= index" class="text-center">
+          <td>{{ indice +1}}</td>
+          <td>{{ tramite.codigo }}</td>
+          <td>{{ tramite.nombre }}</td>
+          <td>{{ tramite.descripcion }}</td>
+          <td>
+            <button mat-icon-button color="primary" >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-footer>
+</mat-card>

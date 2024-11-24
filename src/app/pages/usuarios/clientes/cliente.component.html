@@ -1,0 +1,41 @@
+<mat-card class="border-primary" >
+  <mat-card-header >
+    <h3>Lista de Clientes</h3>
+  </mat-card-header>
+  <mat-card-footer>
+    <div class="table-responsive">
+      <hr>
+      <table class="table mat-table-striped w-100 rounded">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes; let indice= index" class="text-center">
+            <td>{{ indice +1}}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.apellido }}</td>
+            <td>{{ cliente.direccion }}</td>
+            <td>{{ cliente.telefono }}</td>
+            <td>{{ calcualarEdad(cliente.fechaNacimiento) }}</td>
+            <td>
+              <button mat-icon-button color="primary" >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-footer>
+</mat-card>

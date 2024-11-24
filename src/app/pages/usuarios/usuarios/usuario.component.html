@@ -1,0 +1,34 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <mat-card-title>Table</mat-card-title>
+
+    <div class="table-responsive">
+      <table class="table mat-table-striped w-100 rounded">
+        <thead>
+            <tr>
+              <th>#</th>
+              <th>Usuario</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios; let indice= index" class="text-center">
+            <td>{{ indice +1}}</td>
+            <td>{{ usuario.username }}</td>
+            <td>{{ usuario.roles | roles }}</td>
+            <td>
+              <button mat-icon-button color="primary" >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>
+
